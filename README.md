@@ -2,7 +2,7 @@
 Austin Schoster, Lucas Fox, Logan Muhlen, Thomas Turner, Ary Sharma (ChatGPT Warriors)
 
 # About
-The frontend of the Nomad mobile app will be created using React Native. Firebase may be used as the backend.
+The frontend of the Nomad mobile app will be created using React Native. Firebase or Supabase may be used as the backend.
 
 
 ## Get started
