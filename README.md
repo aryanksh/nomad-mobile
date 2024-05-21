@@ -1,6 +1,10 @@
 # Project Nomad
 Austin Schoster, Lucas Fox, Logan Muhlen, Thomas Turner, Ary Sharma (ChatGPT Warriors)
 
+# About
+The frontend of the Nomad mobile app will be created using React Native. Firebase may be used as the backend.
+
+
 ## Get started
 1. Clone the repo
 2. Install dependencies
