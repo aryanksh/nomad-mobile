@@ -16,7 +16,7 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.company.nomad",
       "config": {
-        "googleMapsApiKey": "AIzaSyBWbfLlnuorVKr_iw_1LZMLdm7EO0ZWI_M"
+        "googleMapsApiKey": "[GOOGLE_MAPS_API_KEY]"
       }
     },
     "android": {
