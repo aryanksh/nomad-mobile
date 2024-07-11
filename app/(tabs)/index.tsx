@@ -1,21 +1,16 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import { Text, View, StyleSheet, FlatList } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import { Stack } from 'expo-router';
 import axios from 'axios';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
-
-// const MapViewWithRef = React.forwardRef((props, ref) => (
-//   <MapView ref={ref} {...props} />
-// ));
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; 
 
 export default function Index() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Nomad' }} />
+      <Stack.Screen options={{ title: 'Nomad' }} /> 
       <View style={styles.container}>
-        <Text>Home page</Text>
-        <MapView style={styles.map} provider={PROVIDER_GOOGLE}/>
-        {/* <MapViewWithRef style={styles.map} provider={PROVIDER_GOOGLE} /> */}
+        {/* According to docs, adding "provider=PROVIDER_GOOGLE" to the MapView tag below should render a map from Google Maps */} 
+        <MapView style={styles.map} /> 
       </View>
     </>
   );
