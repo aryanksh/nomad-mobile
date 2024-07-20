@@ -1,34 +1,49 @@
 import React, { useState, useEffect, forwardRef } from 'react';
-import { Text, View, StyleSheet } from "react-native";
-import { Stack } from 'expo-router';
-import axios from 'axios';
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import MapView, { PROVIDER_GOOGLE } from 'react-native-maps'; 
 import SearchBar from '@/components/SearchBar';
+import { fetchHotels } from '@/app/api/googleMapsApi'
+import HotelList from '@/components/HotelList';
+
 
 export default function Index() {
+
+  //TODO: find a way for application to not remember previous state upon reload
+  const[selectedLocation, setSelectedLocation] = useState([]);
+  const[hotelList, setHotelList] = useState([]);
+  useEffect(() => {
+    console.log(selectedLocation);
+    if (selectedLocation) {
+      getHotels();
+    }
+  }, [selectedLocation])
+
+  const getHotels = () => {
+    fetchHotels().then(response => {
+      console.log(response.data.results)
+      setHotelList(response.data.results);
+    })
+  }
+
   return (
     <>
-      <View>
+      <ScrollView>
         <View style={styles.headerContainer}>
-          <SearchBar searchedLocation={(location: any) => console.log(location)}/>
+          <SearchBar searchedLocation={(location: any) => setSelectedLocation(location) }/>
         </View>
+        <MapView style={styles.map} />
         
-        <MapView style={styles.map} /> 
-      </View>
+        {hotelList.length > 0? <HotelList hotelList={hotelList} /> : null}
+      
+      </ScrollView>
     </>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    // marginBottom:270,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
   map: {
-    height: '100%',
-    width: '100%'
+    height: '20%',
+    width: '100%',
   },
   headerContainer: {
     position:'absolute',
