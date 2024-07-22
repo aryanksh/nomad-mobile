@@ -1,16 +1,16 @@
 import { View, Text, StyleSheet, FlatList } from 'react-native'
-import HotelItem from './HotelCard';
+import Card from './Card';
 
-export default function HotelList({ hotelList }: { hotelList: any }) {
+export default function ListToRender({ list, typeOfList }: { list: any, typeOfList: any }) {
   try {
     return (
       <View style={styles.title}>
-        <Text style={{ fontSize: 20, paddingLeft: 10 }}>Found {hotelList.length} Hotels </Text>
+        <Text style={{ fontSize: 20, paddingLeft: 10 }}>Found {list.length} {typeOfList} </Text>
 
         <FlatList
-          data={hotelList}
+          data={list}
           renderItem={({ item }) => (
-            <HotelItem hotel={item} />
+            <Card card={item} />
           )}
           scrollEnabled={false}
         />

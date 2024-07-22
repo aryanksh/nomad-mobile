@@ -1,21 +1,24 @@
 import { View, Text, Image, StyleSheet } from 'react-native'
 import { GOOGLE_MAPS_API_KEY } from '@/apiKey';
+// import image1 from '@/assets/images/default-image.png';
 
-export default function HotelItem({ hotel }: { hotel: any }) {
+export default function Card({ card }: { card: any }) {
     try {
-        const imageURL = `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${hotel?.photos[0]?.photo_reference}&key=${GOOGLE_MAPS_API_KEY}`;
 
+        const imageURL = card.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${card?.photos[0]?.photo_reference}&key=${GOOGLE_MAPS_API_KEY}` : require('@/assets/images/default-image.png');
+
+        // const test = require('@/assets/images/default-image.png');
         return (
             <View style={styles.container}>
                 <Image
+                    style={styles.cardImage}
                     source={{ uri: imageURL }}
-                    style={styles.hotelImage}
                 />
 
-                <View style={styles.hotelCard}>
-                    <Text style={styles.hotelName}>{hotel.name}</Text>
-                    <Text style={styles.hoteladdress}>{hotel.vicinity}</Text>
-                    <Text style={styles.hotelRating} >Rating: {hotel.rating}/5</Text>
+                <View style={styles.Card}>
+                    <Text style={styles.cardName}>{card.name}</Text>
+                    <Text style={styles.cardAddress}>{card.vicinity}</Text>
+                    <Text style={styles.cardRating} >Rating: {card.rating}/5</Text>
                 </View>
             </View>
         )
@@ -33,25 +36,25 @@ const styles = StyleSheet.create({
         alignItems: "center",
         padding: 7
     },
-    hotelCard: {
+    Card: {
         paddingLeft: 15,
         flex: 1
     },
-    hotelName: {
+    cardName: {
         fontSize: 18,
         marginBottom: 5,
         fontWeight: "bold"
     },
-    hoteladdress: {
+    cardAddress: {
         color: "#777",
         fontWeight: "500"
     },
-    hotelImage: {
+    cardImage: {
         width: 110,
         height: 110,
         borderRadius: 10
     },
-    hotelRating: {
+    cardRating: {
         color: "#f39c12",
         fontWeight: "500"
     }

@@ -9,10 +9,9 @@ const API_URL = 'https://jsonplaceholder.typicode.com/posts';
 export default function Settings() {
   return (
     <>
-      <Stack.Screen options={{ title: 'Nomad' }} />
       {/* <View style={styles.container}> */}
         {/* <Text>Home page</Text> */}
-        <Text>{testAPI()}</Text>
+        {/* <Text>{testAPI()}</Text> */}
       {/* </View> */}
     </>
   );
