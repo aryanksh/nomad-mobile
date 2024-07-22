@@ -17,7 +17,7 @@ export default function Index() {
 
   useEffect(() => {
     if (selectedLocationAddress) {
-      console.log("useEffect(): ", selectedLocationAddress); // TODO: selectedLocation holds address.  may need to use normal geocode (https://developers.google.com/maps/documentation/geocoding/requests-geocoding#geocoding-lookup)
+      console.log("useEffect(): ", selectedLocationAddress);
       
       handleSelectLocation();
     }
@@ -56,13 +56,6 @@ export default function Index() {
     })
   }
 
-  // const getCoordinates = () => {
-  //   const coords = fetchCoords(selectedLocationAddress.toString()).then(response => {
-  //     console.log("coords (helper function): ", response.data.results[0].geometry.location);
-  //     return (response.data.results[0].geometry.location);
-  //   });
-
-  //TODO: work on making the map dynamic (rendering new hotels/activites/places depending on user selected location). need to get coordinates of selected location first
   return (
     <>
       <ScrollView keyboardShouldPersistTaps="always">

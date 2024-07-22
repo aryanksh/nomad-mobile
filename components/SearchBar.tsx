@@ -9,7 +9,6 @@ export default function SearchBar({ searchedLocation }: { searchedLocation: any 
                 placeholder='Search'
                 onPress={(data, details = null) => {
                     searchedLocation(details?.formatted_address) // returns address
-                    // console.log("searchBar.tsx_1: ", details?.geometry?.location) // returns lat/long
                 }}
                 enablePoweredByContainer={false}
                 fetchDetails={true}

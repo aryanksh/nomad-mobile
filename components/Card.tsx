@@ -7,7 +7,6 @@ export default function Card({ card }: { card: any }) {
 
         const imageURL = card.photos ? `https://maps.googleapis.com/maps/api/place/photo?maxwidth=400&photo_reference=${card?.photos[0]?.photo_reference}&key=${GOOGLE_MAPS_API_KEY}` : require('@/assets/images/default-image.png');
 
-        // const test = require('@/assets/images/default-image.png');
         return (
             <View style={styles.container}>
                 <Image
