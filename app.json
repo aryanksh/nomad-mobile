@@ -13,9 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.company.nomad",
+      "config": {
+        "googleMapsApiKey": "[GOOGLE_MAPS_API_KEY]"
+      }
     },
     "android": {
+      "package": "com.company.nomad",
+      "versionCode": 1,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
