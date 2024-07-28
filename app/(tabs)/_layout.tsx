@@ -1,6 +1,7 @@
 import FontAwesome from '@expo/vector-icons/FontAwesome';
 import { AntDesign } from '@expo/vector-icons';
 import { Tabs } from 'expo-router';
+import TripPlanner from './TripPlanner';
 
 export default function TabLayout() {
   return (
@@ -17,6 +18,14 @@ export default function TabLayout() {
         options={{
           title: 'Settings',
           tabBarIcon: ({ color }) => <FontAwesome size={28} name="cog" color={color} />,
+        }}
+      />
+
+      <Tabs.Screen
+        name="TripPlanner"
+        options={{
+          title: 'Trip Planner',
+          tabBarIcon: ({ color }) => <FontAwesome size={25} name="map" color={color} />,
         }}
       />
     </Tabs>
