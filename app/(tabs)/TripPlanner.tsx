@@ -60,10 +60,10 @@ export default function TripPlanner() {
                       <Image source={{ uri: item.imageUrl || 'https://via.placeholder.com/300x150' }} style={styles.itemImage} />
                       <View style={styles.itemDetails}>
                         <Text style={styles.itemName}>{item.name}</Text>
-                        <Text style={styles.itemVicinity}>{String(item.vicinity)}</Text> {/* Convert to string */}
+                        <Text style={styles.itemVicinity}>{String(item.vicinity)}</Text> 
                         <View style={styles.itemRating}>
                           <MaterialIcons name="star" size={20} color="yellow" />
-                          <Text style={styles.ratingText}>{String(item.rating)}</Text> {/* Convert to string */}
+                          <Text style={styles.ratingText}>{String(item.rating)}</Text> 
                         </View>
                       </View>
                     </View>
@@ -87,14 +87,14 @@ export default function TripPlanner() {
                       <Image source={{ uri: item.imageUrl || 'https://via.placeholder.com/300x150' }} style={styles.starredItemImage} />
                       <View style={styles.starredItemDetails}>
                         <Text style={styles.starredItemName}>{item.name}</Text>
-                        <Text style={styles.starredItemVicinity}>{String(item.vicinity)}</Text> {/* Convert to string */}
+                        <Text style={styles.starredItemVicinity}>{String(item.vicinity)}</Text> 
                         <View style={styles.starredItemRating}>
                           <MaterialIcons name="star" size={20} color="yellow" />
-                          <Text style={styles.ratingText}>{String(item.rating)}</Text> {/* Convert to string */}
+                          <Text style={styles.ratingText}>{String(item.rating)}</Text> 
                         </View>
                       </View>
-                      <TouchableOpacity style={styles.addItemButton} onPress={() => moveItemsToDay(item, 0)}> {/* Change day index as needed */}
-                        <Text style={styles.addItemButtonText}>Add to Day 1</Text> {/* Change text dynamically as needed */}
+                      <TouchableOpacity style={styles.addItemButton} onPress={() => moveItemsToDay(item, 0)}> 
+                        <Text style={styles.addItemButtonText}>Add to Day 1</Text>
                       </TouchableOpacity>
                     </View>
                   ))
