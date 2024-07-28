@@ -147,6 +147,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'red',
         borderRadius: 4,
         padding: 4,
+        zIndex: 1000,
     },
     itemImage: {
         width: '100%',
